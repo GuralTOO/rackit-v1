@@ -3,6 +3,7 @@ class Device:
                  power=0,
                 #  Custom attributes
                 compute_units=0,
+                height=0,
                  ):
 
         # From NetBox
@@ -22,6 +23,7 @@ class Device:
 
         # Custom attributes
         self.power = power
+        self.height = height
         
 
 # Example usage:
