@@ -1,7 +1,14 @@
 import requests
 
 class Rack:
-    def __init__(self, id=None, url="", display="", name="", facility_id="", site=None, location=None, tenant=None, status=None, role=None, serial="", asset_tag="", rack_type=None, width=None, u_height=0, starting_unit=0, weight=0, max_weight=0, weight_unit=None, desc_units=False, outer_width=0, outer_depth=0, outer_unit=None, mounting_depth=0, description="", comments="", tags=None, custom_fields=None, created="", last_updated="", device_count=0, powerfeed_count=0):
+    def __init__(self, id=None, url="", display="", name="", facility_id="", site=None, location=None, tenant=None, 
+                 status=None, role=None, serial="", asset_tag="", rack_type=None, width=None, u_height=0, starting_unit=0, 
+                 weight=0, max_weight=0, weight_unit=None, desc_units=False, outer_width=0, outer_depth=0, outer_unit=None, 
+                 mounting_depth=0, description="", comments="", tags=None, custom_fields=None, created="", last_updated="", 
+                 device_count=0, powerfeed_count=0, 
+                 
+                #  custom attributes
+                 devices=[], room_location_x=0, room_location_y=0, power_used=0, power_max=0, height=0, total_weight=0):
         self.id = id
         self.url = url
         self.display = display
@@ -34,6 +41,17 @@ class Rack:
         self.last_updated = last_updated
         self.device_count = device_count
         self.powerfeed_count = powerfeed_count
+        
+        
+        # Custom attributes
+        self.devices = devices
+        self.room_location_x = room_location_x
+        self.room_location_y = room_location_y
+        self.power_used = power_used
+        self.power_max = power_max
+        self.height = height
+        self.total_weight = total_weight
+        
 
     def save_to_netbox(self, netbox_url, api_token):
         """Placeholder for saving rack to NetBox."""

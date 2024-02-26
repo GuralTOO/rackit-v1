@@ -1,5 +1,5 @@
 class Device:
-    def __init__(self, region, site, location, rack, position, gps_coordinates, tenant, device_type, description, airflow, serial_number, asset_tag, config_template,
+    def __init__(self, region, site, location, rack_id, position, gps_coordinates, tenant, device_type, description, airflow, serial_number, asset_tag, config_template,
                  power=0,
                 #  Custom attributes
                 compute_units=0,
@@ -10,7 +10,7 @@ class Device:
         self.region = region
         self.site = site
         self.location = location
-        self.rack = rack
+        self.rack_id = rack_id
         self.position = position
         self.gps_coordinates = gps_coordinates
         self.tenant = tenant
@@ -24,6 +24,7 @@ class Device:
         # Custom attributes
         self.power = power
         self.height = height
+        self.compute_units = compute_units
         
 
 # Example usage:
@@ -31,7 +32,7 @@ device_info = {
     'region': 'North America / US-East',
     'site': 'ATL02 - Edgeconnex ATL02',
     'location': 'ATL02 - Pod3',
-    'rack': 'p03c46 (500.02)',
+    'rack_id': 'p03c46 (500.02)',
     'position': 'U34 / Front',
     'gps_coordinates': '',
     'tenant': 'Rakuten',
@@ -43,4 +44,4 @@ device_info = {
     'config_template': ''
 }
 
-device = Device(**device_info)
+# device = Device(**device_info)
